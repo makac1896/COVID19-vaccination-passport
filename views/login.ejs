@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Coded and Designed by Maka10deka -->
+    <meta name="author" content="Maka10deka Chikumbu">
+    <link rel="icon" href="/images/hislogo.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" integrity="sha256-46r060N2LrChLLb5zowXQ72/iKKNiw/lAmygmHExk/o=" crossorigin="anonymous" />
+    <!-- <link
+    rel="stylesheet"
+    href="https://bootswatch.com/4/journal/bootstrap.min.css"
+  /> -->
+   <style>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-repeat: none;
+    background-size: cover;
+    background-image: url('');
+    /* background-color: #ffffff; */
+    color: #141c2c;
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+}
+
+ .lx{
+   display: none;
+} 
+
+.alert {
+    color: rgb(23, 68, 13);
+}
+
+.ly{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.text-success{
+    color: rgb(52, 168, 52);
+    size: 1.5em;
+}
+
+a {
+    color: #2762eb;
+    text-decoration: none;
+}
+
+.container {
+    margin-top: 20px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 3px;
+    border: 20px solid #40da6e;
+    width: 1000px;
+    box-shadow: 0 4px 5px rgba(0,0,0,0.1);
+    display: flex;
+}
+
+form {
+    border-right: 1px solid #14ad47;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    flex: 1;
+}
+
+.form-control {
+    margin: 10px 0;
+    width: 100%;
+}
+
+label {
+    display: inline-block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input:not([type="checkbox"]) {
+    background-color: transparent;
+    border: 2px solid #ecf2ff;
+    border-radius: 3px;
+    font-family: inherit;
+    font-size: 14px;
+    padding: 10px;
+    width: 100%;
+}
+
+.checkbox-container {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.checkbox-container a {
+    margin-left: auto;
+}
+
+.checkbox-container label {
+    color: #7a7e8c;
+    font-weight: normal;
+}
+
+.btn {
+    cursor: pointer;
+    background-color: #ffffff;
+    border: 5px solid #25b831;
+    border-radius: 3px;
+    color: rgb(23, 68, 13);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: inherit;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 10px;
+    margin: 20px 0;
+    width: 100%;
+}
+
+.btn:hover{
+    background-color: #25b831;
+    border: 2px solid #ffffff;
+    border-radius: 3px;
+    color: rgb(255, 255, 255);
+}
+
+.btn-ghost {
+    background-color: transparent;
+    border-color: #000000;
+    color: #141c2c;
+}
+
+.btn img {
+    margin-right: 5px;
+    width: 20px;
+}
+
+.features {
+    flex: 1.5;
+    padding: 40px;
+}
+
+.feature {
+    position: relative;
+    padding-left: 30px;
+    margin: 40px 0;
+}
+
+.feature i {
+    color: #30b430;
+    position: absolute;
+    top: 5px;
+    left: 0;
+}
+
+.feature h3 {
+    margin: 0;
+}
+
+.feature p {
+    font-size: 14px;
+    line-height: 1.8;
+    margin: 5px 0;
+}
+
+
+
+@media(max-width: 768px) {
+    .container {
+        flex-direction:column;
+        margin-top: 0%;
+        height: auto;
+    }
+
+    /* .lx {
+        display: flex;
+        margin: 2px auto;
+    } */
+
+    form {
+        border-right: 0;
+    }
+}
+    </style>
+    <title>Login</title>
+</head>
+<body>
+    
+    <div class="container">
+            <div class="lx">
+                        <img src="/images/hislogo.png" height="150px" width="150px" align="center" alt="user 1" />
+            </div>
+        
+        <form action="/users/login" method="POST">
+            <div class="form-control">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email">
+            </div>
+
+            <div class="form-control">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Password">
+            </div>
+
+            <div class="checkbox-container">
+                <input type="checkbox" id="remember">
+                <label for="remember">Remember me</label>
+
+                <a href="#">Forgot Password</a>
+            </div>
+            <%- include ("./partials/messages"); %>
+            <button class="btn" type="submit">Log In</button>
+           
+            <small>Don't have an account? <a href="/users/register">Register</a></small>
+        </form>
+
+        <div class="features">
+            <div class="ly">
+                <img src="/images/hislogo.png" height="150px" width="150px" align="center" alt="user 1" />
+            </div>
+            <div class="feature">
+                <i class="fas fa-heartbeat"></i>
+                <h3>Digital Health Portal</h3>
+                <p>Welcome, to the innovative platform to make your life easier. Use this platform to keep your vaccination and relevant health information in one secure place.</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-edit"></i>
+                <h3>Updates</h3>
+                <p>Keep up-to-date with all the health information from the school health officials via this portal. Feel free to contact us anytime!</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
